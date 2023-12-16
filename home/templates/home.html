@@ -66,19 +66,26 @@
             <div class="dropdown">
                 {% if user.is_authenticated %}
                     <div class="user-profile">
-                        <p>Welcome {{ user.username }}!</p>
+                        <img src="{{ user.userprofile.profile_picture.url }}" alt="Profile Picture" class="profile-picture">
                     </div>
                 {% else %}
                     <a class="login-text" href="{% url 'signin' %}">Login</a>
                 {% endif %}
+                
                 {% if user.is_authenticated %}
                 <div class="dropdown-content">
-                        <a href="#">Profile</a>
-                        <a href="{% url 'signout' %}">Logout</a>
-                    {% endif %}
+                    <a href="#">Profile</a>
+                    <a href="{% url 'signout' %}">Logout</a>
                 </div>
+                {% else %}
+                <div class="dropdown-content">
+                    <a href="{% url 'signin' %}">Login</a>
+                    <a href="{% url 'signup' %}">Signup</a>
+                </div>
+                {% endif %}
             </div>
         </div>
+        
     </nav>
 
     <!-- -----------------------------------------home -->
@@ -271,7 +278,7 @@
     <div class="upcoming-events" id="upcoming-events">
         <br><br>
         <h1 class="heading">Upcoming Events</h1>
-        <br><br><br>
+        <br>
         <div class="upcoming-boxes">
             <div class="upcoming-box-container" id="upcoming-box-container">
                 <div class="upcoming-box">
@@ -335,7 +342,7 @@
                 <div class="upcoming-dot" onclick="showUpcomingBoxes(1)"></div>
                 <div class="upcoming-dot" onclick="showUpcomingBoxes(2)"></div>
             </div>
-            <br>
+            
             <a>
                 <div class="rectangle-feature rectangle-feature-upcoming">
                     <h3>EXPLORE ALL</h3>

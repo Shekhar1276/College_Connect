@@ -109,6 +109,7 @@ a {
     padding: 10px;
     z-index: 1;
     border-radius: 5px;
+    margin-left: -5px;
 }
 
 .dropdown:hover .dropdown-content {
@@ -126,6 +127,13 @@ a {
 
 .dropdown-content a:hover {
     color: #ff3131;
+}
+
+.profile-picture {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover; /* To maintain aspect ratio */
 }
 
 /* RESPONSIVE */
