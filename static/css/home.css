@@ -11,7 +11,6 @@ body {
     padding: 0;
     font-family: sans-serif;
     background-color: #ff3131;
-
 }
 
 .user-profile>p {
@@ -129,7 +128,7 @@ a {
     color: #ff3131;
 }
 
-
+/* RESPONSIVE */
 @media screen and (max-width: 600px) {
     .navbar-icons {
         flex-wrap: wrap;
@@ -140,6 +139,7 @@ a {
     }
 }
 
+/*  */
 
 .button-container {
     position: absolute;
