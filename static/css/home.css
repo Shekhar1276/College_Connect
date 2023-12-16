@@ -14,6 +14,17 @@ body {
 
 }
 
+.user-profile>p {
+    font-size: 25px;
+    color: #fff;
+    margin: 0; /* Remove the default margin */
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .background-image {
     position: relative;
     overflow: hidden;
@@ -67,21 +78,13 @@ body {
 .navbar-icons {
     display: flex;
     gap: 40px;
+    align-items: center; /* Add this line to vertically center the items */
 }
 
 .navbar-icons>* {
     font-size: 25px;
     font-weight: bold;
-}
-
-/* Updated Navbar Styles */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: transparent;
-    color: #ffffff;
-    padding: 15px;
+    vertical-align: middle; /* Add this line to vertically center the icons */
 }
 
 .navbar-links {
@@ -119,7 +122,7 @@ body {
     text-decoration: none;
     margin: 5px 0;
     transition: color 0.3s;
-    font-size: medium;
+    font-size: large;
 }
 
 .dropdown-content a:hover {

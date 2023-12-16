@@ -60,12 +60,27 @@
             </div>
         </div>
         <div class="navbar-icons">
-            <div class="search-icon">🔍</div>
-            <div class="notification-icon">🔔</div>
-            <div class="user-profile">User</div>
+            <div class="search-icon"><i class="material-icons" style="font-size: 1.8rem;">search</i></div>
+            <div class="notification-icon"><i class="material-icons" style="font-size: 1.8rem;">notifications</i></div>
+            
+            <div class="dropdown">
+                {% if user.is_authenticated %}
+                    <div class="user-profile">
+                        <p>Welcome {{ user.username }}!</p>
+                    </div>
+                {% else %}
+                    <a class="login-text" href="{% url 'signin' %}">Login</a>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <div class="dropdown-content">
+                        <a href="#">Profile</a>
+                        <a href="{% url 'signout' %}">Logout</a>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </nav>
-    
+
     <!-- -----------------------------------------home -->
     <div class="home" id="home">
         <div class="background-image">
@@ -394,7 +409,8 @@
                     <img src="user1.jpg" alt="User 1" class="testimonial-image">
                     <p class="testimonial-name">John Doe</p>
                     <p class="testimonial-college">University of Example</p>
-                    <p class="review">I am incredibly grateful for the support I received from this community. The study groups have
+                    <p class="review">I am incredibly grateful for the support I received from this community. The study
+                        groups have
                         been a game-changer for me, providing a collaborative and engaging environment for learning. The
                         resources available have been instrumental in my academic success, and the virtual study
                         sessions have allowed me to connect with peers worldwide. The platform is user-friendly, making
@@ -407,7 +423,8 @@
                     <img src="user2.jpg" alt="User 2" class="testimonial-image">
                     <p class="testimonial-name">Jane Smith</p>
                     <p class="testimonial-college">Another University</p>
-                    <p class="review">I can't express how much this community has enhanced my learning journey. The study groups
+                    <p class="review">I can't express how much this community has enhanced my learning journey. The
+                        study groups
                         provide a dynamic space to collaborate and share knowledge. The platform's user-friendly design
                         made it effortless to connect with like-minded individuals. The virtual study sessions have been
                         a lifesaver, allowing me to participate in engaging discussions and broaden my perspectives. The
@@ -448,47 +465,47 @@
 
     <!-- ----------------------------FOOTER -->
 
-<!-- Updated Footer HTML -->
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-section">
-            <h3>Contact Us</h3>
-            <p>Email: info@collegeconnect.com</p>
-            <p>Phone: +1 (123) 456-7890</p>
+    <!-- Updated Footer HTML -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@collegeconnect.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Get Involved</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Study Groups</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Get Involved</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Connect and Collaborate | Designed with ❤️ by Your Company</p>
         </div>
-        <div class="footer-section">
-            <h3>Explore</h3>
-            <ul>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Study Groups</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h3>Resources</h3>
-            <ul>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Support</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2023 Connect and Collaborate | Designed with ❤️ by Your Company</p>
-    </div>
-</footer>
+    </footer>
 
-    
+
 
 </body>
 

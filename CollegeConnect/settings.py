@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home',
     'events',
     'social',
+    'user',
     
 ]
 
@@ -54,11 +55,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'CollegeConnect.urls'
+import os
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,3 +133,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# myproject/settings.py
+AUTH_USER_MODEL = 'user.CustomUser'
